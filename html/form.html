@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & SignUp</title>
+    <!-- add icon link -->
+    <link rel="icon" href="../assets/images/website-images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/exotic-parts.css">
+    <script src="https://kit.fontawesome.com/0413a50a0f.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+<body id="form-bg">
+    <!--form box-->
+    <div class="wrapper">
+        <!--button container-->
+        <div class="button">
+            <!--for toggle button-->
+            <div id="butn-div"></div>
+            <!--button-->
+            <button type="button" class="toggle-butn" id="toggle-login" onclick="login()">Log In</button>
+            <button type="button" class="toggle-butn" id="toggle-signup" onclick="signup()">Sign Up</button>
+        </div>
+
+        <!-- login form container-->
+        <div class="form-container">
+            <form action="#" method="get" id="login" onsubmit="loginButton()">
+                <!-- email -->
+                <div class="form-icon">
+                    <i class="far fa-envelope input-email"></i><input type="email" class="input-field" id="login-email" onblur="loginEmailValidation1()"
+                        onkeyup="loginEmailValidation2()" autocomplete="off" placeholder="Enter Email...">
+                </div>
+                <small id="loginemail-data" class="block"><span>Enter a valid Email</span></small>
+                <br>
+                <!-- password -->
+                <div class="form-icon">
+                    <i class="fas fa-lock input-pswd"></i><input type="password" class="input-field" id="login-paswd" onblur="loginPasswordValidation1()" onkeyup="loginPasswordValidation2()"
+                        autocomplete="off" placeholder="Enter Password...">
+                </div>
+                <small id="loginpaswd-data" class="block"><span> Please input this field</span></small>
+                <br>
+                <!-- checkbox -->
+                <input id="remember-me" name="remember-me" type="checkbox" class="checkbox"><label
+                    for="remember-me">Remember me</label>
+                <br>
+                <button type="submit" class="submit-btn" id="login-btn">Log In</button>
+            </form>
+        </div>
+        <!-- signup form -->
+        <div class="form-container">
+            <form action="#" method="get" id="signup" onsubmit= "return signUpButton(this)">
+                <!-- full name -->
+                <div class="form-icon">
+                    <i class="fas fa-user signup-user"></i><input type="text" class="input-field signup-input"
+                      onblur= "checkfullname1()" onkeyup="checkfullname2()" id="full-name" autocomplete="off" placeholder="Enter Full Name...">
+                </div>
+                <small class="block" id="name-data"> <span>Names only include
+                        letter</span></small>
+                <!-- email -->
+                <div class="form-icon">
+                    <i class="far fa-envelope signup-email"></i><input type="text" class="input-field signup-input"
+                     onblur="checkemail1()" onkeyup="checkemail2()"   id="signUp-email" autocomplete="off" placeholder="Enter Email...">
+                </div>
+                <small id="email-data" class="block"><span>Enter a valid Email
+                        Address</span></small>
+                <!-- Password -->
+                <div class="form-icon">
+                    <i class="fas fa-lock signup-pswd"></i><input type="password" class="input-field signup-input"
+                    onkeyup="checkpassword2()"  onblur="checkpassword1()"  id="signUp-password" autocomplete="off" placeholder="Enter Password...">
+                </div>
+                <small id="paswd-data" class="block"><span>Please Input this field</span></small>
+                <!-- confirm password -->
+                <div class="form-icon">
+                    <i class="fas fa-lock confirm-pswd"></i><input type="password" class="input-field signup-input"
+                    onkeyup="checkconfirmpassword2()" onblur="checkconfirmpassword1()"    id="confirm-password" autocomplete="off" placeholder="Confirm Password...">
+                </div>
+                <small id="confirmPaswd-data" class="block"><span>Password not
+                        match</span></small>
+                <br>
+                <input id="agreement" name="agreement" type="checkbox" class="checkbox"><label for="agreement"
+                    required>I agree
+                    to the terms & condition</label>
+                <br>
+                <button type="submit" class="submit-btn" id="signup-btn" onclick="signUpButton()">Sign Up</button>
+
+            </form>
+        </div>
+    </div>
+    <!-- external signup / login js file -->
+    <script src="../assets/script/form.js"></script>
+</body>
+
+</html>
